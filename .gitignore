@@ -1,3 +1,10 @@
+VAADIN/
+target/
+.classpath
+.project
+.settings/
+
+
 *.class
 
 # Mobile Tools for Java (J2ME)
