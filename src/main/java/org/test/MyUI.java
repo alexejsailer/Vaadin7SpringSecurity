@@ -44,10 +44,10 @@ public class MyUI extends UI {
 	@Override
 	protected void init(VaadinRequest vaadinRequest) {
 
-		ServletContext servletContext = VaadinServlet.getCurrent().getServletContext();
-        WebApplicationContext requiredWebApplicationContext = WebApplicationContextUtils.getRequiredWebApplicationContext(servletContext);
-        Object bean = requiredWebApplicationContext.getBean("customAuthenticationProvider");
-        System.out.println(bean);
+//		ServletContext servletContext = VaadinServlet.getCurrent().getServletContext();
+//        WebApplicationContext requiredWebApplicationContext = WebApplicationContextUtils.getRequiredWebApplicationContext(servletContext);
+//        Object bean = requiredWebApplicationContext.getBean("customAuthenticationProvider");
+//        System.out.println(bean);
 
         String user = "admin";
 		String password = "tesdt";
