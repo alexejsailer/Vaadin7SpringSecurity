@@ -4,9 +4,8 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>My Page</title>
+<meta http-equiv="refresh" content="0; url=<%=request.getContextPath()%>/myui" />
 </head>
 <body>
-<c:url value="/myui" var="myui" />
-<c:redirect url="${myui}"/>
 </body>
 </html>
