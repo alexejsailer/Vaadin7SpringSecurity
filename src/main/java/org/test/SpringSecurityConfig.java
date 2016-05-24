@@ -11,13 +11,11 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()                                                               
-		.antMatchers("/VAADIN/**", "/resources/**").permitAll(); 
-		http.authorizeRequests()
-			.anyRequest().authenticated()
-			.and().formLogin().loginPage("/login").successForwardUrl("/main")
-			.permitAll();
-			http.csrf().disable();
+		http.authorizeRequests().antMatchers("/VAADIN/**", "/resources/**").permitAll();
+		http.authorizeRequests().anyRequest().authenticated().and().formLogin().loginPage("/login")
+				.successForwardUrl("/main").permitAll();
+		http.csrf().disable();
+		http.headers().frameOptions().sameOrigin();
 	}
 
 	@Autowired
