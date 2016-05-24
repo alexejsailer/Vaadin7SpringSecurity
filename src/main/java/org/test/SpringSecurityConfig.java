@@ -7,22 +7,21 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @EnableWebSecurity
-public class SpringSecurityConfig extends WebSecurityConfigurerAdapter  {
+public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-			.anyRequest().authenticated()
-			.and().formLogin().loginPage("/login").successForwardUrl("/main")
-			.permitAll();
-			http.csrf().disable();
+		http.authorizeRequests().antMatchers("/VAADIN/**", "/resources/**").permitAll();
+		http.authorizeRequests().anyRequest().authenticated().and().formLogin().loginPage("/login")
+				.successForwardUrl("/main").permitAll();
+		http.csrf().disable();
+		http.headers().frameOptions().sameOrigin();
 	}
-	
+
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		SpringCustomAuthProvider customAuthenticationProvider = new SpringCustomAuthProvider();
 		auth.authenticationProvider(customAuthenticationProvider);
 	}
-	
+
 }
