@@ -1,2 +1,3 @@
-webapp/* linguist-vendored
+/src/main/webapp/* linguist-vendored
+/src/main/resources/org/test/* linguist-vendored
 *.java linguist-vendored=false
